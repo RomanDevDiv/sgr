@@ -1,0 +1,71 @@
+/* Trust Section (formerly Why Calm) */
+.trust-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+}
+
+.trust-card {
+    display: flex;
+    overflow: hidden;
+    padding: 0;
+    /* Override default card padding */
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: var(--white);
+    transition: var(--transition);
+}
+
+.trust-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.trust-img-wrapper {
+    flex: 0 0 40%;
+    min-height: 200px;
+}
+
+.trust-placeholder {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.trust-content {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trust-content .icon-box {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.trust-content h3 {
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color);
+}
+
+.trust-content p {
+    color: var(--light-text);
+    font-size: 0.95rem;
+}
+
+@media (max-width: 992px) {
+    .trust-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    .trust-card {
+        flex-direction: column;
+    }
+
+    .trust-img-wrapper {
+        flex: 0 0 150px;
+    }
+}

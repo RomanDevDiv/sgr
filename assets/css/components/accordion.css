@@ -1,0 +1,81 @@
+/* Accordion Styles */
+.accordion-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #eee;
+    margin-bottom: var(--spacing-sm);
+}
+
+.accordion-trigger {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md) 0;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    cursor: default;
+    /* Since it's hover */
+}
+
+.accordion-trigger:hover {
+    color: var(--primary-color);
+}
+
+.accordion-trigger .arrow {
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+}
+
+.accordion-item:hover .arrow {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding-right: var(--spacing-lg);
+}
+
+.accordion-content p,
+.accordion-content ul {
+    padding-bottom: var(--spacing-md);
+    color: var(--light-text);
+}
+
+.accordion-content ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* Hover State Logic */
+.accordion-item:hover .accordion-content {
+    max-height: 200px;
+    /* Approximate max height */
+}
+
+/* Service Check List */
+.service-list-check {
+    margin-bottom: var(--spacing-md);
+}
+
+.service-list-check li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.service-list-check li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success-color);
+    font-weight: bold;
+}

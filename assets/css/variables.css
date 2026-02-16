@@ -1,24 +1,91 @@
+/* CSS Variables & Reset */
 :root {
-    /* Colors */
-    --primary-color: #0056b3;
-    /* Darker blue */
+    /* ========================================= */
+    /* THEME SELECTION - UNCOMMENT ONE BLOCK ONLY */
+    /* ========================================= */
+
+    /* --- DESIGN 01: CORPORATE BLUE (Default) --- */
+    /* Based on standard corporate trust, clean blue palette */
+    /* --primary-color: #0056b3;
+    --primary-hover: #004494;
     --secondary-color: #00a8ff;
-    /* Lighter blue */
     --accent-color: #ffc107;
-    /* Yellow/Gold for accents */
     --text-color: #333333;
     --light-text: #666666;
-    --background-light: #f8f9fa;
     --white: #ffffff;
+    --light-bg: #f8f9fa;
     --error-color: #dc3545;
-
-    /* Gradients */
+    --success-color: #28a745;
     --primary-gradient: linear-gradient(135deg, #0056b3 0%, #00a8ff 100%);
+    --overlay-gradient: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    --border-radius-base: 12px;
+    --font-family-base: 'Inter', sans-serif; */
+
+    /* --- DESIGN 02: MODERN DARK --- */
+    /* sleek, high contrast, tech-oriented */
+/*     
+    --primary-color: #3f8cff;
+    --primary-hover: #66a3ff;
+    --secondary-color: #00a8ff;
+    --accent-color: #ffd700;
+    --text-color: #e0e0e0;
+    --light-text: #aaaaaa;
+    --white: #1a1a1a;
+    --light-bg: #2c2c2c;
+    --error-color: #ff6b6b;
+    --success-color: #51cf66;
+    --primary-gradient: linear-gradient(135deg, #3f8cff 0%, #0056b3 100%);
+    --overlay-gradient: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+    --border-radius-base: 16px;
+    --font-family-base: 'Inter', sans-serif;
+    */
+
+    /* --- DESIGN 03: SERIOUS & TRUST (Grey/Navy) --- */
+    /* More conservative, minimal color, high reliability feel */
+/*     
+    --primary-color: #2c3e50;
+    --primary-hover: #1a252f;
+    --secondary-color: #34495e;
+    --accent-color: #e67e22;
+    --text-color: #2c3e50;
+    --light-text: #7f8c8d;
+    --white: #ffffff;
+    --light-bg: #ecf0f1;
+    --error-color: #c0392b;
+    --success-color: #27ae60;
+    --primary-gradient: linear-gradient(to right, #2c3e50, #4ca1af);
+    --overlay-gradient: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.8));
+    --border-radius-base: 4px; 
+    --font-family-base: 'Roboto', sans-serif;
+    */
+
+    /* --- DESIGN 04: WARM & FRIENDLY (Teal/Gold) --- */
+    /* Approachable, modern startup feel */
+    
+    --primary-color: #00b894;
+    --primary-hover: #00cec9;
+    --secondary-color: #81ecec;
+    --accent-color: #fdcb6e;
+    --text-color: #2d3436;
+    --light-text: #636e72;
+    --white: #ffffff;
+    --light-bg: #dfe6e9;
+    --error-color: #d63031;
+    --success-color: #00b894;
+    --primary-gradient: linear-gradient(135deg, #55efc4 0%, #00b894 100%);
+    --overlay-gradient: linear-gradient(rgba(0, 184, 148, 0.5), rgba(0, 184, 148, 0.8));
+    --border-radius-base: 20px;
+    --font-family-base: 'Outfit', sans-serif; 
+   
 
     /* Typography */
     --font-family-base: 'Inter', sans-serif;
-    --font-size-base: 16px;
-    --line-height-base: 1.5;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-h3: 1.5rem;
 
     /* Spacing */
     --spacing-xs: 0.25rem;
@@ -32,6 +99,116 @@
     --header-height: 80px;
 
     /* Transitions */
-    --transition-fast: 0.2s ease;
-    --transition-normal: 0.3s ease;
+    --transition: 0.3s ease;
+
+    /* Shadows */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+    /* Z-index */
+    --z-modal: 9999;
+    --z-overlay: 9998;
+    --z-header: 1000;
+    --z-top-btn: 900;
+}
+
+/* Modern Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-family-base);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+/* Utilities */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--primary-gradient);
+    border-radius: 2px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-1 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.mb-2 {
+    margin-bottom: var(--spacing-md);
+}
+
+.mb-3 {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    :root {
+        --font-size-h1: 2rem;
+        --font-size-h2: 1.75rem;
+        --spacing-xl: 3rem;
+    }
 }

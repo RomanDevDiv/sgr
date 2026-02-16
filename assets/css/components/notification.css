@@ -1,0 +1,29 @@
+/* Notifications */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--white);
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateX(120%);
+    transition: transform 0.3s ease;
+    z-index: 10001;
+    border-left: 5px solid #ccc;
+    font-weight: 500;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification-success {
+    border-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.notification-error {
+    border-color: var(--error-color);
+    color: var(--error-color);
+}

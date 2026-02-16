@@ -1,0 +1,141 @@
+/* Footer Styles */
+.footer {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+    color: #fff;
+    padding: 60px 0 30px;
+    margin-top: auto;
+}
+
+.footer-top {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+/* Left: Contacts (30% approx) */
+.footer-contacts {
+    flex: 0 0 30%;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    padding-right: 30px;
+}
+
+.footer-contacts h4 {
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+}
+
+.footer-contacts p {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    opacity: 0.9;
+}
+
+.footer-contacts a {
+    color: #fff;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-contacts a:hover {
+    color: var(--secondary-color);
+}
+
+/* Right: Map (70%) */
+.footer-map {
+    flex: 1;
+}
+
+.custom-map-btn {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    margin-top: 15px;
+    background: transparent;
+    transition: var(--transition);
+    max-width: 250px;
+}
+
+.custom-map-btn:hover {
+    background: white;
+    color: #333;
+}
+
+/* Bottom */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo img {
+    height: 50px;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.footer-logo img:hover {
+    opacity: 1;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Scroll To Top Button */
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 999;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.scroll-to-top-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-5px);
+}
+
+.scroll-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .footer-top {
+        flex-direction: column;
+    }
+
+    .footer-contacts {
+        flex: 1;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 30px;
+        padding-right: 0;
+    }
+
+    .footer-map {
+        width: 100%;
+    }
+}

@@ -1,0 +1,69 @@
+/* Services Component */
+.services-wrapper {
+    margin-bottom: var(--spacing-xl);
+}
+
+.service-block {
+    background: var(--white);
+    border: 1px solid #eee;
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+}
+
+.service-block:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-5px);
+}
+
+.service-block h3 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    font-size: 1.4rem;
+}
+
+.service-desc {
+    margin-bottom: var(--spacing-md);
+    color: var(--light-text);
+    flex-grow: 1;
+}
+
+/* Process Section */
+.process-badges {
+    margin-bottom: var(--spacing-lg);
+}
+
+.step {
+    background: var(--light-bg);
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+    border: 1px solid transparent;
+    transition: var(--transition);
+}
+
+.step:hover {
+    border-color: var(--secondary-color);
+    background: #fff;
+    box-shadow: var(--shadow-sm);
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    filter: grayscale(0.2);
+    transition: var(--transition);
+}
+
+.step:hover .step-icon {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.step h3 {
+    margin-bottom: var(--spacing-sm);
+}

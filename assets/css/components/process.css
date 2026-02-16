@@ -1,0 +1,139 @@
+/* Process Timeline Styles */
+.process-section {
+    position: relative;
+    background: var(--light-bg);
+}
+
+.process-guarantee {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--success-color);
+    background: rgba(40, 167, 69, 0.1);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+.process-timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 40px auto 0;
+    padding: 20px 0;
+}
+
+/* Connecting Line */
+.process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: var(--primary-gradient);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.process-step-item {
+    display: flex;
+    justify-content: flex-end;
+    /* Odd items right, even items left via child selection? No, alternate logic */
+    padding-right: 50%;
+    position: relative;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.process-step-item:nth-child(even) {
+    justify-content: flex-start;
+    padding-right: 0;
+    padding-left: 50%;
+}
+
+/* Marker Circle */
+.step-marker {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background: var(--white);
+    border: 4px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    z-index: 2;
+    box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.process-step-item:last-child .step-marker {
+    background: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+}
+
+/* Content Box */
+.step-content {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    width: 80%;
+    /* Adjust width relative to half-container */
+    position: relative;
+    margin: 0 40px;
+    /* Spacing from center line */
+    transition: var(--transition);
+}
+
+.process-step-item:hover .step-content {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.step-content h3 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+.step-content p {
+    font-size: 0.95rem;
+    color: var(--light-text);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .process-timeline::before {
+        left: 20px;
+    }
+
+    .process-step-item {
+        justify-content: flex-start;
+        padding-right: 0;
+        padding-left: 60px;
+        /* Space for marker */
+    }
+
+    .process-step-item:nth-child(even) {
+        padding-left: 60px;
+    }
+
+    .step-marker {
+        left: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .step-content {
+        width: 100%;
+        margin: 0;
+    }
+}
