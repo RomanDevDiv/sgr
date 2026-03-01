@@ -270,11 +270,22 @@ h3 {
     overflow: hidden;
 }
 
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../design/01_web.jpg") center/cover no-repeat;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
 .hero-layout {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 24px;
     align-items: end;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-copy p {
@@ -322,6 +333,15 @@ h3 {
 .hero-visual-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 16px 28px rgba(6, 21, 45, 0.12);
+}
+
+.hero-preview {
+    width: 100%;
+    height: 128px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #dbe9f5;
 }
 
 .trust,
@@ -444,6 +464,15 @@ h3 {
     margin-top: 10px;
 }
 
+.result-preview {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 14px;
+    opacity: 0.88;
+}
+
 .audience-layout {
     background: var(--surface);
     border-radius: var(--radius-xl);
@@ -473,7 +502,9 @@ h3 {
 .audience-note {
     min-height: 340px;
     border-radius: var(--radius-lg);
-    background: linear-gradient(135deg, #06143a, #1d2f5c);
+    background:
+        linear-gradient(135deg, rgba(6, 20, 58, 0.74), rgba(29, 47, 92, 0.72)),
+        url("../design/02_web.jpg") center/cover no-repeat;
     color: #eef5ff;
     display: flex;
     align-items: flex-end;
@@ -530,6 +561,22 @@ h3 {
     color: #eef5ff;
     padding: 28px 0;
     margin-bottom: 22px;
+    position: relative;
+    overflow: hidden;
+}
+
+.process::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../design/04_web.jpg") center/cover no-repeat;
+    opacity: 0.16;
+    pointer-events: none;
+}
+
+.process .container {
+    position: relative;
+    z-index: 1;
 }
 
 .process h2 {
@@ -642,10 +689,23 @@ h3 {
     border-radius: var(--radius-xl);
     padding: 34px 0;
     margin-bottom: 22px;
+    position: relative;
+    overflow: hidden;
+}
+
+.consultation::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("../design/05_web.jpg") center/cover no-repeat;
+    opacity: 0.18;
+    pointer-events: none;
 }
 
 .consultation-layout {
     display: flex;
+    position: relative;
+    z-index: 1;
 }
 
 .consultation-form {
