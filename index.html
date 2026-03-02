@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <meta name="description" content="Оформляем СГР и экспертные заключения без возвратов и лишних этапов.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -15,35 +15,29 @@
     <header class="site-header">
         <div class="container topbar">
             <a class="logo" href="#hero" aria-label="На главную">
-                <span class="logo-badge">СЗЦЭК</span>
+                <span class="logo-badge"><img src="design/images/logo-badge.png" alt="������-�������� ����� ���������� � ��������"></span>
             </a>
-
             <div class="mobile-quick-actions" aria-label="Быстрые действия">
                 <a class="icon-link phone" href="tel:+79219148082" aria-label="Позвонить">&#9742;</a>
-                <a class="icon-link telegram" href="https://t.me/+79219148082" target="_blank" rel="noopener" aria-label="Telegram">
-                    <i class="fab fa-telegram"></i>
-                </a>
+                <a class="icon-link telegram" href="https://t.me/+79219148082" target="_blank" rel="noopener" aria-label="Telegram"> <i class="fab fa-telegram"></i></a>
             </div>
-
             <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">&#9776;</button>
-
             <nav class="main-nav" id="mainNav">
                 <a href="#trust">Преимущества</a>
                 <a href="#services">Услуги</a>
                 <a href="#process">Как работаем</a>
                 <a href="#contacts">Контакты</a>
             </nav>
-
             <div class="top-actions">
                 <a class="phone-link" href="tel:+79219148082">+7 (921) 914-80-82</a>
                 <a class="btn btn-outline" href="#consultation">Обратный звонок</a>
                 <a class="icon-link telegram desktop-telegram" href="https://t.me/+79219148082" target="_blank" rel="noopener" aria-label="Telegram">
-                    <i class="fab fa-telegram"></i>
+             
+                     <i class="fab fa-telegram"></i>
                 </a>
             </div>
         </div>
     </header>
-
     <div class="status-ticker" aria-label="Статус">
         <div class="status-track">
             <span>Аккредитация ФСА</span>
@@ -71,8 +65,11 @@
                 </div>
                 <div class="hero-side">
                     <div class="hero-visual-card">
-                        <img class="hero-preview" src="design/01_web.jpg" alt="Макет V1 - Hero">
-                        <span>Являемся членом Торгово-промышленной палаты РФ</span>
+                        <img class="hero-visual-logo" src="design/images/TPC.png" alt="Торгово-промышленная палата">
+                        <div class="hero-visual-content">
+                            <p>Являемся членом Торгово-промышленной палаты РФ</p>
+                            <button class="hero-cert-btn" type="button" data-doc-open data-doc-src="dosc/certificate.pdf#view=FitH">Свидетельство</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,7 +79,7 @@
             <div class="container">
                 <div class="accreditation-pill">
                     <span>АТТЕСТАТ АККРЕДИТАЦИИ RA.RU.710588 от 11.08.2025</span>
-                    <a href="#contacts">Посмотреть</a>
+                    <button type="button" data-doc-open data-doc-src="dosc/RA.RU.710588 от 11.08.2025.pdf#view=FitH">Посмотреть</button>
                 </div>
                 <h2>Почему нам доверяют</h2>
                 <div class="trust-grid">
@@ -96,11 +93,11 @@
                     </article>
                     <article class="card">
                         <h3>Не навязываем лишние услуги</h3>
-                        <p>Сначала анализируем продукцию и задачу. Потом предлагаем решение.</p>
+                        <p>Сначала анализируем продукцию и задачу. После этого предлагаем решение.</p>
                     </article>
                     <article class="card">
                         <h3>Держим вас в курсе</h3>
-                        <p>Вы понимаете, что происходит на каждом этапе и что будет следующим шагом.</p>
+                        <p>Вы всегда понимаете, на каком этапе находится работа.</p>
                     </article>
                 </div>
             </div>
@@ -122,7 +119,6 @@
                 <div class="result-card">
                     <h3>Результат</h3>
                     <p>Зарегистрированный документ, который принимают.</p>
-                    <img class="result-preview" src="design/02_web.jpg" alt="Макет V1 - Результат">
                 </div>
             </div>
         </section>
@@ -134,13 +130,13 @@
                     <p>Этот формат работы подходит, если вы:</p>
                     <ul class="audience-list">
                         <li>Производитель и выводите новую продукцию</li>
-                        <li>Импортер и вам нужен документ для ввоза или растаможки</li>
+                        <li>Импортёр и вам нужен документ для ввоза или растаможки</li>
                         <li>Поставщик для сетей или маркетплейсов</li>
-                        <li>Продавец на маркетплейсах, где требуется подтверждение безопасности</li>
+                        <li>Продавец на маркетплейсах, где требуют подтверждение безопасности</li>
                         <li>Участник тендеров и госзакупок, где важны формальные преимущества</li>
                     </ul>
                 </div>
-                <div class="audience-note">Если вы узнаете себя, мы говорим на одном языке.</div>
+                <div class="audience-note">Если вы узнаёте себя — мы говорим на одном языке.</div>
             </div>
         </section>
 
@@ -153,7 +149,7 @@
                     </header>
                     <div class="service-content">
                         <div>
-                            <p>СГР - обязательный документ для продукции, включенной в перечни госрегистрации.</p>
+                            <p>СГР — обязательный документ для продукции, включенной в перечни госрегистрации.</p>
                             <p><strong>Результат:</strong> зарегистрированное СГР, с которым продукцию можно ввозить, продавать и масштабировать.</p>
                             <a class="btn btn-primary" href="#consultation">Проверить, требуется ли СГР</a>
                         </div>
@@ -162,21 +158,20 @@
                             <ul>
                                 <li>детскую продукцию</li>
                                 <li>средства личной гигиены</li>
-                                <li>изделия для ухода за полостью рта</li>
+                                <li>зубные щетки и изделия для ухода за полостью рта</li>
                                 <li>товары бытовой химии</li>
                             </ul>
                         </div>
                     </div>
                 </article>
-
                 <article class="service-card">
                     <header>
                         <h3>Экспертные заключения (ЭЗ)</h3>
                     </header>
                     <div class="service-content">
                         <div>
-                            <p>Экспертное заключение - добровольный документ, подтверждающий безопасность и соответствие санитарным требованиям.</p>
-                            <p><strong>Используется для:</strong> повышения доверия, участия в тендерах и отстройки от конкурентов.</p>
+                            <p>Экспертное заключение — добровольный документ, подтверждающий безопасность и соответствие санитарным требованиям.</p>
+                            <p><strong>Используется для:</strong> повышения доверия покупателей, участия в тендерах и отстройки от конкурентов.</p>
                             <a class="btn btn-primary" href="#consultation">Получить экспертное заключение</a>
                         </div>
                         <div>
@@ -185,7 +180,7 @@
                                 <li>непродовольственную продукцию</li>
                                 <li>пищевую продукцию</li>
                                 <li>сроки годности</li>
-                                <li>требования СанПиН</li>
+                                <li>требованиям СанПиН</li>
                                 <li>ПТО и оборудование</li>
                             </ul>
                         </div>
@@ -208,7 +203,7 @@
                 <ul class="process-checks">
                     <li>Без возвратов</li>
                     <li>Без лишних этапов</li>
-                    <li>Без "ой, мы забыли сказать"</li>
+                    <li>Без «ой, мы забыли сказать»</li>
                 </ul>
             </div>
         </section>
@@ -236,7 +231,7 @@
                             <span>Навяжут лишние документы?</span>
                             <span class="faq-icon">+</span>
                         </button>
-                        <p>Подбираем только необходимые документы под задачу и канал продаж.</p>
+                        <p>Подбираем только необходимые документы под вашу задачу и канал продаж.</p>
                     </article>
                     <article class="faq-item">
                         <button class="faq-toggle" type="button">
@@ -265,7 +260,7 @@
                     <input type="tel" name="phone" placeholder="Телефон" required>
                     <label class="policy">
                         <input type="checkbox" required>
-                        <span>Я подтверждаю ознакомление и даю согласие на обработку персональных данных.</span>
+                        <span>Я подтверждаю ознакомление и даю Согласие на обработку моих персональных данных.</span>
                     </label>
                     <button class="btn btn-primary" type="submit">Отправить заявку</button>
                 </form>
@@ -292,21 +287,32 @@
 
     <footer class="site-footer">
         <div class="container footer-layout">
-            <div class="logo-badge footer-logo">СЗЦЭК</div>
+            <div class="logo-badge footer-logo"><img src="design/images/logo-badge.png" alt="Северо-Западный Центр Экспертиза и Контроль"></div>
             <div class="footer-links">
                 <a href="#">Согласие на обработку персональных данных</a>
                 <a href="#">Политика обработки персональных данных</a>
-                <p>© 2026 ООО «СЗЦЭК»</p>
+                <p>© 2026 ООО «Северо-Западный Центр<br>«Экспертиза и Контроль»</p>
             </div>
             <div class="footer-actions">
-                <a class="phone-link" href="tel:+79219148082">+7 (921) 914-80-82</a>
+                <a class="phone-link" href="tel:+79219148082"><i class="fas fa-phone-alt" aria-hidden="true"></i> +7 (921) 914-80-82</a>
                 <a class="btn btn-outline" href="#consultation">Обратный звонок</a>
-                <a class="btn btn-telegram-outline" href="https://t.me/+79219148082" target="_blank" rel="noopener">Написать в Telegram</a>
+                <a class="icon-link telegram footer-telegram" href="https://t.me/+79219148082" target="_blank" rel="noopener" aria-label="Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
             </div>
         </div>
     </footer>
-
+    <div class="certificate-modal" id="certificateModal" aria-hidden="true">
+        <div class="certificate-modal__backdrop" data-doc-close></div>
+        <div class="certificate-modal__dialog" role="dialog" aria-modal="true" aria-label="Свидетельство ТПП">
+            <button class="certificate-modal__close" type="button" data-doc-close aria-label="Закрыть">×</button>
+            <iframe class="certificate-modal__frame" id="docPreviewFrame" src="dosc/certificate.pdf#view=FitH" title="Документ"></iframe>
+        </div>
+    </div>
     <button class="to-top" id="toTopBtn" aria-label="Наверх">&#8593;</button>
+
     <script src="js/script.js"></script>
 </body>
 </html>
+
+

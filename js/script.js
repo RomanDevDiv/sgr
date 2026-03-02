@@ -3,11 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     initSmoothScroll();
     initFaq();
     initConsultationForm();
+    initDocumentPreviewModal();
     initToTopButton();
 });
 
 const SCROLL_DELAY_MS = 120;
 const SCROLL_DURATION_MS = 900;
+let activeScrollRaf = null;
 
 function initMobileMenu() {
     const header = document.querySelector(".site-header");
@@ -102,6 +104,44 @@ function initConsultationForm() {
     });
 }
 
+function initDocumentPreviewModal() {
+    const modal = document.getElementById("certificateModal");
+    const frame = document.getElementById("docPreviewFrame");
+    const openButtons = document.querySelectorAll("[data-doc-open]");
+    if (!modal || !frame || !openButtons.length) return;
+
+    const closeTriggers = modal.querySelectorAll("[data-doc-close]");
+    const defaultSrc = frame.getAttribute("src") || "dosc/certificate.pdf#view=FitH";
+
+    const closeModal = () => {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    };
+
+    const openModal = () => {
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    };
+
+    openButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const src = button.getAttribute("data-doc-src") || defaultSrc;
+            frame.setAttribute("src", encodeURI(src));
+            openModal();
+        });
+    });
+
+    closeTriggers.forEach((trigger) => trigger.addEventListener("click", closeModal));
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && modal.classList.contains("open")) {
+            closeModal();
+        }
+    });
+}
+
 function initToTopButton() {
     const button = document.getElementById("toTopBtn");
     if (!button) return;
@@ -123,9 +163,17 @@ function initToTopButton() {
 }
 
 function animateScrollTo(targetY, durationMs) {
+    if (activeScrollRaf) {
+        cancelAnimationFrame(activeScrollRaf);
+        activeScrollRaf = null;
+    }
+
     const startY = window.scrollY;
     const distance = targetY - startY;
-    if (Math.abs(distance) < 1) return;
+    if (Math.abs(distance) < 1) {
+        window.scrollTo(0, Math.max(0, targetY));
+        return;
+    }
 
     const startTime = performance.now();
     const easeInOutCubic = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
@@ -136,9 +184,13 @@ function animateScrollTo(targetY, durationMs) {
         const eased = easeInOutCubic(progress);
         window.scrollTo(0, startY + distance * eased);
         if (progress < 1) {
-            requestAnimationFrame(step);
+            activeScrollRaf = requestAnimationFrame(step);
+        } else {
+            // Snap to the exact target to avoid sub-pixel drift.
+            window.scrollTo(0, Math.max(0, targetY));
+            activeScrollRaf = null;
         }
     };
 
-    requestAnimationFrame(step);
+    activeScrollRaf = requestAnimationFrame(step);
 }
